@@ -31,7 +31,7 @@ built. Your group's job is the **mobile-first CSS** and the **GitHub teamwork**.
 | --- | --- | --- | --- | --- |
 | 1 (project manager) | Tongao, Ashley | AshleyT-dotcom | `base.css` | Created the repo and added the teammates and instructor. Added the viewport meta tag. Wrote the phone layout and the 768px, 1024px and 1280px rules. |
 | 2 | Romo, Krixialyn Erica | krixialynericaromo  | `nav.css` |I wrote the `nav.css`. I made the navbar with Flexbox (stacked links with 48px height on phones, one row from 768px) and the footer with Grid (1 column on phones, 3 columns from 1024px). |
-| 3 | Lepana, [first name] | [Lepana's username] | `form.css` | |
+| 3 | Lepana, Nicole Ashley Jules | nicoleashleyjuleslepana-tech | `form.css` |I wrote `form.css`. I made the login form with Flexbox: stacked full-width fields with 48px height and 16px text, and a Show/Hide button beside the password. From 768px the checkbox row and buttons go side by side and the card gets a max-width of 32rem. From 1024px the card gets 2.5rem padding. |
 
 ## Experiment 0: the page without the viewport tag
 
