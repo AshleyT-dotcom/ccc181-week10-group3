@@ -5,12 +5,10 @@ built. Your group's job is the **mobile-first CSS** and the **GitHub teamwork**.
 
 ## Run it
 
-```bash
-npm install
-npm run dev          # open the local URL it prints
-npm run dev:phone    # same, but your phone (same Wi-Fi) can open the Network URL
-npm run build        # must finish with no errors before you submit
-```
+    npm install
+    npm run dev          # open the local URL it prints
+    npm run dev:phone    # same, but your phone (same Wi-Fi) can open the Network URL
+    npm run build        # must finish with no errors before you submit
 
 ## Rules
 
@@ -24,7 +22,7 @@ npm run build        # must finish with no errors before you submit
 | Item | Your answer |
 | --- | --- |
 | Group number | 3 |
-| Section | [your section, e.g. BSIT 3A] |
+| Section | IT3-A |
 | Repository URL | https://github.com/AshleyT-dotcom/ccc181-week10-group3 |
 
 ## Members (each member fills in their own row in their own commit)
