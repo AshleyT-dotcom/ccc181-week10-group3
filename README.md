@@ -30,7 +30,7 @@ built. Your group's job is the **mobile-first CSS** and the **GitHub teamwork**.
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
 | 1 (project manager) | Tongao, Ashley | AshleyT-dotcom | `base.css` | Created the repo and added the teammates and instructor. Added the viewport meta tag. Wrote the phone layout and the 768px, 1024px and 1280px rules. |
-| 2 | Romo, [first name] | [Romo's username] | `nav.css` | |
+| 2 | Romo, Krixialyn Erica | krixialynericaromo  | `nav.css` |I wrote `nav.css`. I made the navbar with Flexbox (stacked links with 48px height on phones, one row from 768px) and the footer with Grid (1 column on phones, 3 columns from 1024px). |
 | 3 | Lepana, [first name] | [Lepana's username] | `form.css` | |
 
 ## Experiment 0: the page without the viewport tag
@@ -47,16 +47,22 @@ What changed **after** adding it?
 
 | Width | What must be true | Pass? |
 | --- | --- | --- |
-| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
-| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
-| 1280 px | Content centered and stops at 1200px. | |
+| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | Pass|
+| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. |Pass |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. |Pass |
+| 1280 px | Content centered and stops at 1200px. |Pass |
 
 ### Breakpoints I observed
 
 Using **Show media queries** and dragging slowly from 360 px to 1280 px, the layout changed at these exact widths:
 
-> (write the widths here, and say whether any width looked broken)
+> At 768 px the navbar turned into one row (brand on the left, links on the
+> right). The checkbox and "Forgot password?" moved side by side, and the two
+> bottom buttons also moved side by side. At 1024 px the brand panel and the
+> login card went side by side, the footer changed to 3 columns, the heading
+> became bigger, and the extra list showed up. At 1280 px the content stopped
+> stretching and stayed centered at 1200px. We did not see any width that looked
+> broken, and there was no sideways scrollbar at any width.
 
 Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png`.
 
