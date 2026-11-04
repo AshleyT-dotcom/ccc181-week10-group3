@@ -68,4 +68,14 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 
 ## What our group learned (leader writes this last)
 
-> (write your answer here)
+> In this activity we learned that mobile-first means we design the phone
+> version first, then add more layout when the screen gets wider using
+> `min-width` media queries. We also learned how important the viewport meta
+> tag is, because without it the phone shows the page like a tiny desktop site.
+> Each of us worked on our own CSS file (base, nav, and form), so we did not
+> have conflicts when merging. We used Grid for the page layout and footer, and
+> Flexbox for the navbar and the form. We also made all buttons, links and
+> inputs at least 48px tall so they are easy to tap, and we added
+> `:focus-visible` together with `:hover`. Lastly, we learned how to use Git
+> and GitHub as a team: working on our own branches, making commits, opening
+> pull requests, and having a teammate review before merging.
