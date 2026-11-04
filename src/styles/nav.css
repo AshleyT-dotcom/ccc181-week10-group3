@@ -83,3 +83,16 @@
   font-size: 0.875rem;
 }
 
+
+/* ---- 2. 768px and up (tablets) ---- */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-list {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
