@@ -114,6 +114,7 @@ Full spec: [docs/API-SPEC.md](docs/API-SPEC.md). Postman collection: `docs/postm
 | Name | GitHub | What I did in Part 2 |
 |---|---|---|
 | Ashley Tongao | AshleyT-dotcom | Member 1 (group leader): set up the Express backend in server/, wrote GET /health and POST /sessions with validation, bcrypt and JWT, the demo user, the smoke test, and added .env to .gitignore |
+| Nicole AshleyJules N. Lepaña | nicoleashleyjuleslepana-tech | Member 3: built the front end login. Wrote src/api/auth.ts (login and getMe), the submit handler with loading, success and error states, the Welcome screen with Log out, the refresh check using sessionStorage, and src/styles/auth.css. |
 
 ### Screenshots
 `screenshots/postman-health.png`, `postman-login-200.png`, `postman-login-401.png`, `postman-me-401.png`, `login-fail-360.png`, `login-success-360.png`
