@@ -83,6 +83,47 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 
 ## Part 2: Backend login (Weeks 12-13)
 
+### How to run
+
+Terminal 1 (backend):
+
+    cd server
+    npm install
+    copy .env.example .env     (Mac/Linux: cp .env.example .env)
+    npm start                  # shows: API running on http://localhost:3000
+
+Terminal 2 (front end, in the project root):
+
+    npm install
+    copy .env.example .env     (Mac/Linux: cp .env.example .env)
+    npm run dev                # open http://localhost:5173
+
+Demo account: student@campusconnect.test / Campus26 (Demo Student)
+
+Both `.env.example` files have fake values: `server/.env.example` (PORT, JWT_SECRET, CLIENT_ORIGIN) and the root `.env.example` (VITE_API_URL).
+
+### API summary
+
+| Method | Endpoint | Purpose | Success | Errors |
+| --- | --- | --- | --- | --- |
+| GET | /api/v1/health | Checks that the API is running | 200 | none |
+| POST | /api/v1/sessions | Logs in | 200 | 400, 401 |
+| GET | /api/v1/users/me | Returns the logged-in user (needs token) | 200 | 401 |
+
+Unknown address: 404 `{ "error": "Not found." }`. Unexpected error: 500 `{ "error": "Something went wrong." }`.
+
+Full details: [docs/API-SPEC.md](docs/API-SPEC.md)
+
+### Who did what in Part 2
+
+| Member | Name | GitHub username | What I did in Part 2 |
+| --- | --- | --- | --- |
+| 1 | Tongao, Ashley | AshleyT-dotcom | |
+| 2 | Romo, Krixialyn Erica | krixialynericaromo | I built GET /api/v1/users/me with the token check. I added the 404 and 500 handlers. I wrote docs/API-SPEC.md with the events design. I made the Postman collection and the screenshots. |
+| 3 | Lepana, Nicole Ashley Jules | nicoleashleyjuleslepana-tech | |
+
+### Part 2 screenshots
+
 ### How to run (two terminals)
 **Terminal 1: backend**
 ```
@@ -124,4 +165,6 @@ Full spec: [docs/API-SPEC.md](docs/API-SPEC.md). Postman collection: `docs/postm
 - `screenshots/postman-login-200.png`
 - `screenshots/postman-login-401.png`
 - `screenshots/postman-me-401.png`
+
+Postman collection: `docs/postman/CampusConnect.postman_collection.json`
 - `screenshots/login-fail-360.png` and `screenshots/login-success-360.png` (Member 3, from the page at 360 px)
