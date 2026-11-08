@@ -4,8 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const { JWT_SECRET, CLIENT_ORIGINS } = require('./config');
-const { findByEmail, toPublic, DUMMY_HASH } = require('./users');
-
+const { findByEmail, findById, toPublic, DUMMY_HASH } = require('./users');
 const app = express();
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_LEN = 128;
@@ -53,6 +52,30 @@ app.post('/api/v1/sessions', (req, res) => {
 
   const token = jwt.sign({ sub: user.id }, JWT_SECRET, { expiresIn: '1h' });
   return res.status(200).json({ token, user: toPublic(user) });
+});
+
+// Token check: reads "Authorization: Bearer <token>"
+function requireAuth(req, res, next) {
+  const [type, token] = (req.headers.authorization || '').split(' ');
+  if (type !== 'Bearer' || !token) {
+    return res.status(401).json({ error: 'Not logged in.' });
+  }
+  try {
+    const payload = jwt.verify(token, JWT_SECRET);
+    req.userId = payload.sub;
+    return next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Not logged in.' });
+  }
+}
+
+// GET /api/v1/users/me
+app.get('/api/v1/users/me', requireAuth, (req, res) => {
+  const user = findById(req.userId);
+  if (!user) {
+    return res.status(401).json({ error: 'Not logged in.' });
+  }
+  return res.status(200).json(toPublic(user));
 });
 
 module.exports = app;
