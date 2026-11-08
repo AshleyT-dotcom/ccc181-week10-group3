@@ -118,6 +118,7 @@ Full spec: [docs/API-SPEC.md](docs/API-SPEC.md). Postman collection: `docs/postm
 |---|---|---|
 | Ashley Tongao | AshleyT-dotcom | Member 1 (group leader): set up the Express backend in server/, wrote GET /health and POST /sessions with validation, bcrypt and JWT, the demo user, the smoke test, and added .env to .gitignore |
 | Krixialyn Erica Romo | krixialynericaromo | Member 2: built GET /api/v1/users/me with the token check, the 404 and 500 handlers, and docs/API-SPEC.md with the events design. Made the Postman collection and the Postman screenshots. |
+| Nicole Ashley Jules N. Lepaña | nicoleashleyjuleslepana-tech | Member 3: built the front end login. Wrote src/api/auth.ts (login and getMe), the submit handler with loading, success and error states, the Welcome screen with Log out, the refresh check using sessionStorage, and src/styles/auth.css. |
 
 
 ### Screenshots
@@ -125,6 +126,5 @@ Full spec: [docs/API-SPEC.md](docs/API-SPEC.md). Postman collection: `docs/postm
 - `screenshots/postman-login-200.png`
 - `screenshots/postman-login-401.png`
 - `screenshots/postman-me-401.png`
-
-Postman collection: `docs/postman/CampusConnect.postman_collection.json`
-- `screenshots/login-fail-360.png` and `screenshots/login-success-360.png` (Member 3, from the page at 360 px)
+- `screenshots/login-fail-360.png`
+- `screenshots/login-success-360.png`
