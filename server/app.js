@@ -78,4 +78,18 @@ app.get('/api/v1/users/me', requireAuth, (req, res) => {
   return res.status(200).json(toPublic(user));
 });
 
+// Unknown address
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not found.' });
+});
+
+// Unexpected errors (keep the stack trace hidden)
+app.use((err, req, res, next) => {
+  if (err.type === 'entity.parse.failed') {
+    return res.status(400).json({ error: 'Email and password are required.' });
+  }
+  console.error(err.message);
+  return res.status(500).json({ error: 'Something went wrong.' });
+});
+
 module.exports = app;
