@@ -79,3 +79,41 @@ Screenshots are in `screenshots/` as `360.png`, `768.png`, `1024.png`, `1280.png
 > `:focus-visible` together with `:hover`. Lastly, we learned how to use Git
 > and GitHub as a team: working on our own branches, making commits, opening
 > pull requests, and having a teammate review before merging.
+
+
+## Part 2: Backend login (Weeks 12-13)
+
+### How to run (two terminals)
+**Terminal 1: backend**
+```
+cd server
+npm install
+copy .env.example .env      (Mac/Linux: cp .env.example .env)   then edit the values
+npm start                   -> "API running on http://localhost:3000"
+```
+**Terminal 2: front end (project root)**
+```
+npm install
+copy .env.example .env      (Mac/Linux: cp .env.example .env)
+npm run dev                 -> http://localhost:5173
+```
+Demo account: `student@campusconnect.test` / `Campus26` (Demo Student).
+Env files: `.env.example` (front end: `VITE_API_URL`) and `server/.env.example` (`PORT`, `JWT_SECRET`, `CLIENT_ORIGIN`).
+Quick self-check with the API running: `cd server && npm run smoke`.
+
+### API summary
+| Method | Endpoint | Success | Errors |
+|---|---|---|---|
+| GET | `/api/v1/health` | 200 | none |
+| POST | `/api/v1/sessions` | 200 | 400, 401 |
+| GET | `/api/v1/users/me` | 200 | 401 |
+
+Full spec: [docs/API-SPEC.md](docs/API-SPEC.md). Postman collection: `docs/postman/CampusConnect.postman_collection.json`.
+
+### Who did what (Part 2)
+| Name | GitHub | What I did in Part 2 |
+|---|---|---|
+| Ashley Tongao | AshleyT-dotcom | Member 1 (group leader): set up the Express backend in server/, wrote GET /health and POST /sessions with validation, bcrypt and JWT, the demo user, the smoke test, and added .env to .gitignore |
+
+### Screenshots
+`screenshots/postman-health.png`, `postman-login-200.png`, `postman-login-401.png`, `postman-me-401.png`, `login-fail-360.png`, `login-success-360.png`
