@@ -1,5 +1,3 @@
-// GIVEN FILE (styled in form.css by Member 3). Do not edit.
-// The sign-in is a DEMO: nothing is sent to a server and nothing is saved.
 import { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import type { LoginErrors, LoginFormValues } from '../types';
@@ -10,6 +8,12 @@ const INITIAL_VALUES: LoginFormValues = {
   email: '',
   password: '',
   remember: false,
+};
+
+type Props = {
+  onLogin: (email: string, password: string) => void;
+  loading: boolean;
+  error: string;
 };
 
 function validate(values: LoginFormValues): LoginErrors {
@@ -23,11 +27,10 @@ function validate(values: LoginFormValues): LoginErrors {
   return errors;
 }
 
-export default function LoginForm() {
+export default function LoginForm({ onLogin, loading, error }: Props) {
   const [values, setValues] = useState<LoginFormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<LoginErrors>({});
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [signedInAs, setSignedInAs] = useState<string | null>(null);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, type, value, checked } = event.target;
@@ -41,7 +44,11 @@ export default function LoginForm() {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
-    setSignedInAs(Object.keys(nextErrors).length === 0 ? values.email : null);
+
+    // Part 1 checks run first. Only a valid form reaches the API.
+    if (Object.keys(nextErrors).length === 0) {
+      onLogin(values.email.trim(), values.password);
+    }
   }
 
   return (
@@ -52,6 +59,12 @@ export default function LoginForm() {
       <p className="login-card__subtitle">Use your school email to continue.</p>
 
       <form className="login-form" onSubmit={handleSubmit} noValidate>
+        {error && (
+          <p className="auth-error" role="alert">
+            {error}
+          </p>
+        )}
+
         <div className="form-field">
           <label htmlFor="email">School email</label>
           <input
@@ -118,16 +131,9 @@ export default function LoginForm() {
           </a>
         </div>
 
-        <button type="submit" className="btn btn--primary">
-          Sign in
+        <button type="submit" className="btn btn--primary" disabled={loading}>
+          {loading ? 'Signing in...' : 'Sign in'}
         </button>
-
-        {signedInAs && (
-          <p className="form-success" role="status">
-            Demo only: {signedInAs} would be signed in here. Nothing was sent
-            or saved.
-          </p>
-        )}
       </form>
 
       <div className="login-card__divider">
