@@ -33,7 +33,7 @@ export default function App() {
       const code = (e as Error).message;
       if (code === 'INVALID') setError('Wrong email or password.');
       else if (code === 'NETWORK') setError('Cannot reach the server. Please try again.');
-      else setError('Something went wrong on our side. Please try again later.');
+      else setError('Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
     }
